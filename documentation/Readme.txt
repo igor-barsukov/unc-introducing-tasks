@@ -1,0 +1,1 @@
+This is folder for different documentation: design documents, UML diagrams, ER-model and etc.
