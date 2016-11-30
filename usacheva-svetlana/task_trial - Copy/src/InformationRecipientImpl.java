@@ -79,7 +79,22 @@ public class InformationRecipientImpl extends Parser implements InformationRecip
     }
 
     @Override
-    public List<String> getListOfProjectsForCustomer(String customerName) {
-        return null;
+    public void getListOfProjectsForCustomer(String customerName) throws IOException {
+        Parser.readUsingScanner();
+        while (itr.hasNext()){
+            if (itr.next().equals(customerName)){
+                while (!(itr.previous().equals("\"projectName\":"))){
+                    itr.hasPrevious();
+                }
+                itr.next();
+                ListOfProjectsForCustomer.add(itr.next());
+                while (!(itr.next().equals(customerName))){
+                    itr.hasNext();
+                }
+            }
+
+        }
+
+        System.out.println(ListOfProjectsForCustomer);
     }
 }

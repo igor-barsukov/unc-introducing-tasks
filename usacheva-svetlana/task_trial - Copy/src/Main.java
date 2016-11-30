@@ -15,6 +15,7 @@ public class Main {
         inf.getListOfEmployeeOnProject("\"DWDM\",");
         inf.getListOfManagersForEmployee("\"Ivanov\",");
         inf.getListOfNotBusyEmployees();
+        inf.getListOfProjectsForCustomer("\"Microsoft\",");
 
     }
 }

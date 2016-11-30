@@ -1,7 +1,6 @@
 package edu.trial.itcompany;
 
 import java.io.IOException;
-import java.util.List;
 
 public interface InformationRecipient {
 
@@ -30,6 +29,6 @@ public interface InformationRecipient {
      * @param customerName name of the customer
      * @return the projects of the customer
      */
-    public List<String> getListOfProjectsForCustomer(String customerName);
+    public void getListOfProjectsForCustomer(String customerName) throws IOException;
 
 }
