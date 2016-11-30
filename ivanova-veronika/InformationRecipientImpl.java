@@ -1,6 +1,3 @@
-package edu.trial.itcompany;
-
-
 
 import java.io.File;
 import java.util.List;
@@ -8,7 +5,6 @@ import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 
 /**
  * Created by acer-pc on 25.11.2016.
