@@ -1,0 +1,24 @@
+ [ 
+  {
+    "personName": "Ivanov",
+    "department": "Designer",
+    "projects": [
+      {
+        "projectName": "DWDM",
+        "customer": "Times",
+        "manager": "Bill Geits"
+      }
+    ]
+  },
+  {
+    "personName": "Petrov",
+    "department": "Developer",
+    "projects": [
+      {
+        "projectName": "DWDM",
+        "customer": "Times",
+        "manager": "Bill Geits"
+      }
+    ]
+  }
+ ] 
