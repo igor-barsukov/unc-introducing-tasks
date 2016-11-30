@@ -20,17 +20,15 @@ public class InformationRecipientImpl extends Parser implements InformationRecip
         while (itr.hasNext()){
             if (itr.next().equals(project)){
                 while (!(itr.previous().equals("\"personName\":"))){
-                    itr.previous();
+                    itr.hasPrevious();
                 }
                 itr.next();
                 ListOfEmployeeOnProject.add(itr.next());
                 while (!(itr.next().equals(project))){
-                    itr.next();
+                    itr.hasNext();
                 }
-               // itr.next();
-
             }
-            //itr.next();
+
         }
 
        System.out.println(ListOfEmployeeOnProject);
@@ -59,8 +57,25 @@ public class InformationRecipientImpl extends Parser implements InformationRecip
     }
 
     @Override
-    public List<String> getListOfNotBusyEmployees() {
-        return null;
+    public void getListOfNotBusyEmployees() throws IOException {
+
+        Parser.readUsingScanner();
+        while (itr.hasNext()){
+            if (itr.next().equals("[]")){
+                while (!(itr.previous().equals("\"personName\":"))){
+                    itr.hasPrevious();
+                }
+                itr.next();
+                ListOfNotBusyEmployees.add(itr.next());
+                while (!(itr.next().equals("[]"))){
+                    itr.hasNext();
+                }
+            }
+
+        }
+
+        System.out.println(ListOfNotBusyEmployees);
+
     }
 
     @Override

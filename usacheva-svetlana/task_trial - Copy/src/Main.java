@@ -12,9 +12,9 @@ public class Main {
     public  static void main(String[] args) throws IOException {
 
         InformationRecipientImpl inf = new InformationRecipientImpl();
-        //inf.getListOfEmployeeOnProject("\"DWDM\",");
+        inf.getListOfEmployeeOnProject("\"DWDM\",");
         inf.getListOfManagersForEmployee("\"Ivanov\",");
-      //  System.out.println(ListOfManagersForEmployee);
+        inf.getListOfNotBusyEmployees();
 
     }
 }

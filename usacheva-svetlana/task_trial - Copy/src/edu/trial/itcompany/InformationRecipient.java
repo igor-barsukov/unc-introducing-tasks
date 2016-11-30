@@ -23,7 +23,7 @@ public interface InformationRecipient {
      * getListOfNotBusyEmployees returns the list of employees who don't have the project
      * @return not busy employees
      */
-    public List<String> getListOfNotBusyEmployees();
+    public void getListOfNotBusyEmployees() throws IOException;
 
     /**
      * getListOfProjectsForCustomer returns the projects of the customer
