@@ -19,20 +19,17 @@ public class NetCracker_Curator_Task_1 {
     public static void main(String[] args){
         Scanner inputLine = new Scanner(System.in);
         RecipientMy task1 = new RecipientMy();     
-        FileReaderList File = new FileReaderList();
+        FileReaderList file = new FileReaderList();
         
         Map hashMap = new HashMap<String, String>();
-        hashMap.put("kkk", "a");
-        hashMap.put("LLL", "b");
-        hashMap.put(":::", "c");
-        
-        System.out.print(hashMap.values()); 
         
         System.out.print("Input file path:");               
         String file2Path = inputLine.nextLine();
         System.out.println("File Path: \"" + file2Path + "\"");
+        file.Read(file2Path);
         
-        
+        ParserFile parser = new ParserFile(file.getDATA(), task1);
+        parser.runParsing();
         
     }
     

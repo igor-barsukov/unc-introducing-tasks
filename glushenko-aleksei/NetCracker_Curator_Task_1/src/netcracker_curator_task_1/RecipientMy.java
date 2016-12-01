@@ -14,7 +14,7 @@ import java.util.Map;
  * @author Glushchenko Alexey
  */
 public class RecipientMy implements InformationRecipient{
-    public class Employee{
+    static public class Employee{
         private String personName;
         public String getPersonName() {
             return personName;
@@ -31,7 +31,7 @@ public class RecipientMy implements InformationRecipient{
         } 
 
     }
-    public class Project{
+    static public class Project{
         private String projectName;
         public String getProjectName() {
             return projectName;
@@ -53,7 +53,7 @@ public class RecipientMy implements InformationRecipient{
             this.manager = manager;
         }
     }
-    public class Customer{
+    static public class Customer{
         private String customer;
         public String getCustomer() {
             return customer;
@@ -63,6 +63,28 @@ public class RecipientMy implements InformationRecipient{
             this.customer = _customer;
         }
     }
+    
+    public ArrayList emp = new ArrayList();
+    public ArrayList prj = new ArrayList();
+        
+    public Map EmplProj = new HashMap<String, String>();
+    public Map ManagEmp = new HashMap<String, String>();
+    public Map ProjCust = new HashMap<String, String>();
+    
+    public void addEmpProjCust(String _personName, String _department, String _projectName, String _customer, String _manager){
+        emp.add(new Employee(_personName, _department));
+        prj.add(new Project(_projectName, _customer, _manager));
+        
+        EmplProj.put(_projectName, _personName);
+        ManagEmp.put(_personName, _manager);
+        ProjCust.put(_projectName, _customer);
+    }
+    public void demo(){
+        System.out.println(((Employee)emp.get(0)).personName);
+        System.out.println(ManagEmp.values());
+        System.out.println(ProjCust.values());
+    }
+    
     /*
     List <String> ListOfEmployeeOnProject;
     public List<String> getListOfEmployeeOnProject() {
