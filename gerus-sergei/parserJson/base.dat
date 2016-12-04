@@ -1,0 +1,225 @@
+{
+  "Employees":[
+  {
+    "personName": "Ivanov",
+    "department": "Designer",
+    "projects": []
+  },
+  {
+    "personName": "Petrov",
+    "department": "Developer",
+    "projects": []
+  },
+  {
+    "personName": "Sidorov",
+    "department": "Manager",
+    "projects": [
+      {
+        "projectName": "4G",
+        "customer": "NEC Corporation",
+        "manager": "Sidorov"
+      },
+      {
+        "projectName": "Dos",
+        "customer": "Megafon",
+        "manager": "Sidorov"
+      },
+      {
+        "projectName": "HTC mobile",
+        "customer": "Ukos",
+        "manager": "Sidorov"
+      },
+      {
+        "projectName": "Kursovoi",
+        "customer": "Microsoft",
+        "manager": "Sidorov"
+      },
+      {
+        "projectName": "Facebook",
+        "customer": "Netcracker",
+        "manager": "Sidorov"
+      }
+    ]
+  },
+  {
+    "personName": "Minakov",
+    "department": "Analyst",
+    "projects": [
+      {
+        "projectName": "4G",
+        "customer": "NEC Corporation",
+        "manager": "Sidorov"
+      },
+      {
+        "projectName": "Windows 300",
+        "customer": "Microsoft",
+        "manager": "Bill Geits"
+      }
+    ]
+  },
+  {
+    "personName": "Studenov",
+    "department": "Financier",
+    "projects": []
+  },
+  {
+    "personName": "Sviridin",
+    "department": "Designer",
+    "projects": [
+      {
+        "projectName": "DWDM",
+        "customer": "Times",
+        "manager": "Bill Geits"
+      }
+    ]
+  },
+  {
+    "personName": "Finberg",
+    "department": "Developer",
+    "projects": []
+  },
+  {
+    "personName": "Bill Geits",
+    "department": "Manager",
+    "projects": [
+      {
+        "projectName": "Windows 300",
+        "customer": "Microsoft",
+        "manager": "Bill Geits"
+      },
+      {
+        "projectName": "vk.com",
+        "customer": "Netcracker",
+        "manager": "Bill Geits"
+      },
+      {
+        "projectName": "DWDM",
+        "customer": "Times",
+        "manager": "Bill Geits"
+      },
+      {
+        "projectName": "MasOs",
+        "customer": "Oracle",
+        "manager": "Bill Geits"
+      }
+    ]
+  },
+  {
+    "personName": "Tsukenberg",
+    "department": "Analyst",
+    "projects": [
+      {
+        "projectName": "Dos",
+        "customer": "Megafon",
+        "manager": "Sidorov"
+      }
+    ]
+  },
+  {
+    "personName": "Jobs",
+    "department": "Financier",
+    "projects": [
+      {
+        "projectName": "Linux -1",
+        "customer": "Oracle",
+        "manager": "Surname3"
+      }
+    ]
+  },
+  {
+    "personName": "Surname1",
+    "department": "Designer",
+    "projects": [
+      {
+        "projectName": "Windows 300",
+        "customer": "Microsoft",
+        "manager": "Bill Geits"
+      },
+      {
+        "projectName": "MasOs",
+        "customer": "Oracle",
+        "manager": "Bill Geits"
+      }
+    ]
+  },
+  {
+    "personName": "Surname2",
+    "department": "Developer",
+    "projects": [
+      {
+        "projectName": "vk.com",
+        "customer": "Netcracker",
+        "manager": "Bill Geits"
+      },
+      {
+        "projectName": "Apple",
+        "customer": "Sun",
+        "manager": "Surname3"
+      }
+    ]
+  },
+  {
+    "personName": "Surname3",
+    "department": "Manager",
+    "projects": [
+      {
+        "projectName": "Linux -1",
+        "customer": "Oracle",
+        "manager": "Surname3"
+      },
+      {
+        "projectName": "Apple",
+        "customer": "Sun",
+        "manager": "Surname3"
+      },
+      {
+        "projectName": "Diploma",
+        "customer": "NEC Corporation",
+        "manager": "Surname3"
+      },
+      {
+        "projectName": "Twitter",
+        "customer": "Megafon",
+        "manager": "Surname3"
+      }
+    ]
+  },
+  {
+    "personName": "Surname4",
+    "department": "Analyst",
+    "projects": []
+  },
+  {
+    "personName": "Surname5",
+    "department": "Financier",
+    "projects": [
+      {
+        "projectName": "Kursovoi",
+        "customer": "Microsoft",
+        "manager": "Sidorov"
+      }
+    ]
+  },
+  {
+    "personName": "Surname6",
+    "department": "Designer",
+    "projects": []
+  },
+  {
+    "personName": "Surname7",
+    "department": "Developer",
+    "projects": [
+      {
+        "projectName": "DWDM",
+        "customer": "Times",
+        "manager": "Bill Geits"
+      },
+      {
+        "projectName": "Apple",
+        "customer": "Sun",
+        "manager": "Surname3"
+      }
+    ]
+  }
+]
+}
