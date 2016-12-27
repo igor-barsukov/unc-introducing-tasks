@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/CompanyBD" />
+        <property name="username" value="postgres" />
+        <property name="password" value="9296" />
+    </bean>
+
+    <bean id="employeeDao" class="lab.companydb.impl.SqlEmployeeDao">
+            <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="projectDao" class="lab.companydb.impl.SqlProjectDao">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="companyDao" class="lab.companydb.impl.SqlCompanyDao">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+</beans>
