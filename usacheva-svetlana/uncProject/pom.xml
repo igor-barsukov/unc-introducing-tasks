@@ -128,17 +128,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Equinox OSGi platform -->
-        <dependency>
-            <groupId>org.eclipse.osgi</groupId>
-            <artifactId>org.eclipse.osgi</artifactId>
-            <version>${equinox.ver}</version>
-            <type>jar</type>
-            <!-- Uncomment the following line if you want it to be available only in test-->
-            <!--
-            <scope>test</scope>
-             -->
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.osgi</groupId>
@@ -147,15 +136,20 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JDBC Data Access Library
-       (depends on spring-core, spring-beans, spring-context, spring-tx)
-       Define this if you use Spring's JdbcTemplate API
-       (org.springframework.jdbc.*)-->
+        <!-- JDBC Data Access Library-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>1.2.6</version>
+            <version>4.3.4.RELEASE</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <!-- Postgres -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4-1200-jdbc41</version>
+        </dependency>
+
 
     </dependencies>
 

@@ -15,7 +15,7 @@ public interface employeeDAO {
      * This is the method to be used to create
      * a record in the Employee table.
      */
-    public Employee createEmployee( int emplId, String name, String department);
+    public void createEmployee(String name, String department);
     /*
      * This is the method to be used to list down
      * a record from the Employee table
