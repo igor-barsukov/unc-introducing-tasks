@@ -135,7 +135,7 @@
             <version>${equinox.ver}</version>
             <type>jar</type>
             <!-- Uncomment the following line if you want it to be available only in test-->
-            <!-- 
+            <!--
             <scope>test</scope>
              -->
         </dependency>
