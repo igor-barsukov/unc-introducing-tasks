@@ -3,7 +3,7 @@ package uncProject;
 import javax.sql.DataSource;
 import java.util.List;
 import javax.sql.DataSource;
-import org.springframework.
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * Created by Света on 28.12.2016.
@@ -13,7 +13,7 @@ public class EmployeeJDBCTemplate implements employeeDAO{
 
     }
 
-    public Employee createEmployee(int empl_id, String name, String department) {
+    public Employee createEmployee(int emplId, String name, String department) {
         return null;
     }
 
