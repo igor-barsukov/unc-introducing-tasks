@@ -9,13 +9,15 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
+       // EmployeeDAO employeeDAO = (EmployeeDAO) ctx.getBean("employeeDAO");
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+
 
         EmployeeJDBCTemplate employeeJDBCTemplate = (EmployeeJDBCTemplate)context.getBean("employeeJDBCTemplate");
 
+
         System.out.println("------Records Creation--------" );
-        employeeJDBCTemplate.createEmployee("John", "manager");
+        employeeJDBCTemplate.createEmployee("\'Margaret\'", "\'hr\'");
 
         System.out.println("------Listing Multiple Records--------" );
         List<Employee> students = employeeJDBCTemplate.getEmployees();

@@ -21,14 +21,14 @@ public class EmployeeJDBCTemplate implements employeeDAO{
 
     public void createEmployee(String name, String department) {
 
-        String SQL = "insert into Employee (name, department) values (?, ?)";
+        String SQL = "insert into \"Employee\" (\"EmpID\", \"Name\", \"Department\") values (DEFAULT , "+name+" ,"+department+" )";
         jdbcTemplateObject.update(SQL);
         System.out.println("Created Record Name = " + name + " Department = " + department);
     }
 
     public List<Employee> getEmployees() {
 
-        String SQL = "select * from Employee";
+        String SQL = "select * from \"Employee\"";
         List <Employee> employees = jdbcTemplateObject.query(SQL,new EmployeeMapper());
         return employees;
     }
