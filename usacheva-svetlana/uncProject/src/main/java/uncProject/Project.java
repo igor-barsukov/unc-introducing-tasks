@@ -7,6 +7,7 @@ public class Project {
 
     private String name;
     private String company;
+    private int managerID;
 
     public void setName(String name) {
         this.name = name;
@@ -20,6 +21,13 @@ public class Project {
     public String getCompanyName() {
         return company;
     }
+    public void setManagerID(int managerID) {
+        this.managerID = managerID;
+    }
+    public int getManagerID() {
+        return managerID;
+    }
+
 
 
 

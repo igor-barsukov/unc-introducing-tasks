@@ -34,14 +34,26 @@ public class EmployeeJDBCTemplate implements employeeDAO{
     }
 
     public List<Project> getProjectsByEmployee(int empl_id) {
-        return null;
+
+        String SQL = "select * from \"Project\" WHERE  \"Project\".\"ManagerID\" = " + empl_id;
+        List <Project> projects = jdbcTemplateObject.query(SQL,new ProjectMapper());
+        return projects;
     }
 
     public List<Company> getCompanyByProjectName(String name) {
-        return null;
+
+        String SQL = "select \"Company\".\"Name\" \n" +
+                "from \"Company\",\n" +
+                "\"Project\"\n" +
+                "WHERE \"Project\".\"Company\" = \"Company\".\"Name\" and\n" +
+                "\"Project\".\"Name\" = " + name;
+        List <Company> companies = jdbcTemplateObject.query(SQL,new CompanyMapper());
+        return companies;
     }
 
     public void deleteEmployeeByName(String name) {
+
+
 
     }
 }
