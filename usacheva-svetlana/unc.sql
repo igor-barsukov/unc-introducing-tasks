@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.4.10
 -- Dumped by pg_dump version 9.4.10
--- Started on 2017-01-06 00:49:05
+-- Started on 2017-01-06 10:55:49
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -22,7 +22,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2039 (class 0 OID 0)
+-- TOC entry 2041 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -77,7 +77,7 @@ CREATE SEQUENCE "EmpToProject_EmpID_seq"
 ALTER TABLE "EmpToProject_EmpID_seq" OWNER TO postgres;
 
 --
--- TOC entry 2040 (class 0 OID 0)
+-- TOC entry 2042 (class 0 OID 0)
 -- Dependencies: 178
 -- Name: EmpToProject_EmpID_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -115,7 +115,7 @@ CREATE SEQUENCE "Employee_EmpID_seq"
 ALTER TABLE "Employee_EmpID_seq" OWNER TO postgres;
 
 --
--- TOC entry 2041 (class 0 OID 0)
+-- TOC entry 2043 (class 0 OID 0)
 -- Dependencies: 177
 -- Name: Employee_EmpID_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -153,7 +153,7 @@ CREATE SEQUENCE "Project_ManagerID_seq"
 ALTER TABLE "Project_ManagerID_seq" OWNER TO postgres;
 
 --
--- TOC entry 2042 (class 0 OID 0)
+-- TOC entry 2044 (class 0 OID 0)
 -- Dependencies: 179
 -- Name: Project_ManagerID_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -186,7 +186,7 @@ ALTER TABLE ONLY "Project" ALTER COLUMN "ManagerID" SET DEFAULT nextval('"Projec
 
 
 --
--- TOC entry 2027 (class 0 OID 32786)
+-- TOC entry 2029 (class 0 OID 32786)
 -- Dependencies: 175
 -- Data for Name: Company; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -203,19 +203,19 @@ JBL
 
 
 --
--- TOC entry 2028 (class 0 OID 32789)
+-- TOC entry 2030 (class 0 OID 32789)
 -- Dependencies: 176
 -- Data for Name: EmpToProject; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY "EmpToProject" ("EmpID", "Name") FROM stdin;
-3	FirstProject
-3	SecondProject
+2	4Project
+5	ThirdProject
 \.
 
 
 --
--- TOC entry 2043 (class 0 OID 0)
+-- TOC entry 2045 (class 0 OID 0)
 -- Dependencies: 178
 -- Name: EmpToProject_EmpID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -224,46 +224,43 @@ SELECT pg_catalog.setval('"EmpToProject_EmpID_seq"', 1, false);
 
 
 --
--- TOC entry 2025 (class 0 OID 32780)
+-- TOC entry 2027 (class 0 OID 32780)
 -- Dependencies: 173
 -- Data for Name: Employee; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY "Employee" ("EmpID", "Name", "Department") FROM stdin;
 1	John	manager
-3	Kate	manager
 2	Alex	it
-4	\N	\N
-5	\N	\N
-6	Margaret	hr
-7	Margaret	hr
+4	Kate	manager
+5	Lili	hr
+6	Henry	it
 \.
 
 
 --
--- TOC entry 2044 (class 0 OID 0)
+-- TOC entry 2046 (class 0 OID 0)
 -- Dependencies: 177
 -- Name: Employee_EmpID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Employee_EmpID_seq"', 7, true);
+SELECT pg_catalog.setval('"Employee_EmpID_seq"', 12, true);
 
 
 --
--- TOC entry 2026 (class 0 OID 32783)
+-- TOC entry 2028 (class 0 OID 32783)
 -- Dependencies: 174
 -- Data for Name: Project; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY "Project" ("Name", "Company", "ManagerID") FROM stdin;
-FirstProject	Nokia	3
-SecondProject	LG	3
 ThirdProject	Polaris	5
+4Project	LG	2
 \.
 
 
 --
--- TOC entry 2045 (class 0 OID 0)
+-- TOC entry 2047 (class 0 OID 0)
 -- Dependencies: 179
 -- Name: Project_ManagerID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -290,6 +287,15 @@ ALTER TABLE ONLY "Employee"
 
 
 --
+-- TOC entry 1913 (class 2606 OID 41009)
+-- Name: pk_emptoproj; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY "EmpToProject"
+    ADD CONSTRAINT pk_emptoproj PRIMARY KEY ("EmpID");
+
+
+--
 -- TOC entry 1907 (class 2606 OID 32832)
 -- Name: pk_projName; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -299,7 +305,7 @@ ALTER TABLE ONLY "Project"
 
 
 --
--- TOC entry 1904 (class 1259 OID 32852)
+-- TOC entry 1904 (class 1259 OID 41001)
 -- Name: fki_companyName; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -307,7 +313,7 @@ CREATE INDEX "fki_companyName" ON "Project" USING btree ("Company");
 
 
 --
--- TOC entry 1910 (class 1259 OID 32830)
+-- TOC entry 1910 (class 1259 OID 40995)
 -- Name: fki_empID; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -315,7 +321,7 @@ CREATE INDEX "fki_empID" ON "EmpToProject" USING btree ("EmpID");
 
 
 --
--- TOC entry 1905 (class 1259 OID 32858)
+-- TOC entry 1905 (class 1259 OID 41007)
 -- Name: fki_managerID; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -323,7 +329,7 @@ CREATE INDEX "fki_managerID" ON "Project" USING btree ("ManagerID");
 
 
 --
--- TOC entry 1911 (class 1259 OID 32840)
+-- TOC entry 1911 (class 1259 OID 40989)
 -- Name: fki_projName; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -331,43 +337,43 @@ CREATE INDEX "fki_projName" ON "EmpToProject" USING btree ("Name");
 
 
 --
--- TOC entry 1912 (class 2606 OID 32847)
+-- TOC entry 1914 (class 2606 OID 40996)
 -- Name: fk_companyName; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "Project"
-    ADD CONSTRAINT "fk_companyName" FOREIGN KEY ("Company") REFERENCES "Company"("Name");
+    ADD CONSTRAINT "fk_companyName" FOREIGN KEY ("Company") REFERENCES "Company"("Name") ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
--- TOC entry 1914 (class 2606 OID 32825)
+-- TOC entry 1917 (class 2606 OID 40990)
 -- Name: fk_empID; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "EmpToProject"
-    ADD CONSTRAINT "fk_empID" FOREIGN KEY ("EmpID") REFERENCES "Employee"("EmpID");
+    ADD CONSTRAINT "fk_empID" FOREIGN KEY ("EmpID") REFERENCES "Employee"("EmpID") ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
--- TOC entry 1913 (class 2606 OID 32853)
+-- TOC entry 1915 (class 2606 OID 41002)
 -- Name: fk_managerID; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "Project"
-    ADD CONSTRAINT "fk_managerID" FOREIGN KEY ("ManagerID") REFERENCES "Employee"("EmpID");
+    ADD CONSTRAINT "fk_managerID" FOREIGN KEY ("ManagerID") REFERENCES "Employee"("EmpID") ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
--- TOC entry 1915 (class 2606 OID 32835)
+-- TOC entry 1916 (class 2606 OID 40984)
 -- Name: fk_projName; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY "EmpToProject"
-    ADD CONSTRAINT "fk_projName" FOREIGN KEY ("Name") REFERENCES "Project"("Name");
+    ADD CONSTRAINT "fk_projName" FOREIGN KEY ("Name") REFERENCES "Project"("Name") ON UPDATE CASCADE ON DELETE CASCADE;
 
 
 --
--- TOC entry 2038 (class 0 OID 0)
+-- TOC entry 2040 (class 0 OID 0)
 -- Dependencies: 6
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -378,7 +384,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2017-01-06 00:49:06
+-- Completed on 2017-01-06 10:55:50
 
 --
 -- PostgreSQL database dump complete
