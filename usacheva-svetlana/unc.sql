@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.4.10
 -- Dumped by pg_dump version 9.4.10
--- Started on 2017-01-06 10:55:49
+-- Started on 2017-01-16 00:47:57
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -55,7 +55,7 @@ ALTER TABLE "Company" OWNER TO postgres;
 
 CREATE TABLE "EmpToProject" (
     "EmpID" integer NOT NULL,
-    "Name" character varying(250)
+    "Name" character varying(250) NOT NULL
 );
 
 
@@ -199,6 +199,8 @@ Polaris
 Samsung
 Sony
 JBL
+Acer
+Digma
 \.
 
 
@@ -209,8 +211,16 @@ JBL
 --
 
 COPY "EmpToProject" ("EmpID", "Name") FROM stdin;
-2	4Project
-5	ThirdProject
+3	a
+5	b
+5	c
+1	d
+37	e
+35	f
+30	g
+30	h
+33	k
+38	s
 \.
 
 
@@ -230,11 +240,18 @@ SELECT pg_catalog.setval('"EmpToProject_EmpID_seq"', 1, false);
 --
 
 COPY "Employee" ("EmpID", "Name", "Department") FROM stdin;
-1	John	manager
-2	Alex	it
-4	Kate	manager
-5	Lili	hr
-6	Henry	it
+3	Margaret	hr
+4	Lili	hr
+32	Pavel	it
+33	Greg	sales
+1	John	marketing
+30	Henry	shipping
+5	Alex	marketing
+34	Elton	administration
+35	Stas	administration
+36	Mikel	shipping
+37	Hilary	sales
+38	Megan	finance
 \.
 
 
@@ -244,7 +261,7 @@ COPY "Employee" ("EmpID", "Name", "Department") FROM stdin;
 -- Name: Employee_EmpID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"Employee_EmpID_seq"', 12, true);
+SELECT pg_catalog.setval('"Employee_EmpID_seq"', 32, true);
 
 
 --
@@ -254,8 +271,16 @@ SELECT pg_catalog.setval('"Employee_EmpID_seq"', 12, true);
 --
 
 COPY "Project" ("Name", "Company", "ManagerID") FROM stdin;
-ThirdProject	Polaris	5
-4Project	LG	2
+a	LG	3
+b	Nokia	5
+c	LG	5
+d	Philips	1
+e	Samsung	37
+f	Polaris	35
+g	Digma	30
+h	JBL	30
+k	Philips	33
+s	Philips	38
 \.
 
 
@@ -287,12 +312,12 @@ ALTER TABLE ONLY "Employee"
 
 
 --
--- TOC entry 1913 (class 2606 OID 41009)
+-- TOC entry 1913 (class 2606 OID 49162)
 -- Name: pk_emptoproj; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY "EmpToProject"
-    ADD CONSTRAINT pk_emptoproj PRIMARY KEY ("EmpID");
+    ADD CONSTRAINT pk_emptoproj PRIMARY KEY ("Name");
 
 
 --
@@ -384,7 +409,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2017-01-06 10:55:50
+-- Completed on 2017-01-16 00:47:59
 
 --
 -- PostgreSQL database dump complete
